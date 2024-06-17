@@ -6,7 +6,7 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:56 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/17 20:23:41 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 20:26:58 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,28 @@
 int main()
 {
 	{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the Cat sound
-	j->makeSound(); //will output the Dog sound
-	meta->makeSound(); //will output The animal sound
-
-	delete meta;
-	delete i;
-	delete j;
-	}
-	{
-		const WrongAnimal* meta = new WrongAnimal();
-		const WrongAnimal* j = new WrongCat();
-		const WrongAnimal* i = new WrongCat();
+		const Animal* meta = new Animal();
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the WrongAnimal sound
-		j->makeSound(); //will output the WrongAnimal sound
-		meta->makeSound(); //will output the WrongAnimal sound
+		i->makeSound(); //will output the Cat sound
+		j->makeSound(); //will output the Dog sound
+		meta->makeSound(); //will output The animal sound
 
 		delete meta;
 		delete i;
 		delete j;
+	}
+	{
+		const WrongAnimal* wrongmeta = new WrongAnimal();
+		const WrongAnimal* wrongcat = new WrongCat();
+		std::cout << wrongcat->getType() << " " << std::endl;
+		wrongcat->makeSound(); //will output the WrongAnimal sound
+		wrongmeta->makeSound(); //will output the WrongAnimal sound
+
+		delete wrongmeta;
+		delete wrongcat;
 	}
 	return 0;
 }
