@@ -6,7 +6,7 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:47 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/17 22:05:14 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 22:11:50 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void Animal::setType(std::string type){
 	this->_type = type;
 }
 
-std::string Animal::getType() const{
+const std::string& Animal::getType() const{
 	return this->_type;//???
 }
 

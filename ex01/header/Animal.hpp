@@ -6,7 +6,7 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:50 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/17 21:07:25 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 22:11:47 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Animal
 		const Animal& operator=(const Animal& copy);
 		virtual ~Animal();
 		
-		std::string getType() const;
+		const std::string& getType() const;
 		void setType(std::string type);
 		virtual void makeSound() const ;// virtual to overwrite
 };
