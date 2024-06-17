@@ -6,14 +6,14 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 21:08:55 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:47:56 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 21:57:00 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
 Brain::Brain(){
-		std::cout << "Brain default constructor called"<< std::endl;
+	std::cout << "Brain default constructor called"<< std::endl;
 }
 
 Brain::Brain(const Brain& copy){
@@ -24,7 +24,19 @@ Brain::Brain(const Brain& copy){
 const Brain& Brain::operator=(const Brain& copy){
 	std::cout << "Brain copy assignment operator overloader called" << "\n\n";
 	if (this != &copy)
-		for (int i = 0; i < ideas.lenght; i++)
+		for (int i = 0; i < 100; i++)
 			ideas[i] = copy.ideas[i];
 	return *this;
+}
+
+Brain::~Brain(){
+	std::cout << "Brain destructor called" << std::endl;
+}
+
+std::string Brain::getIdeas(int index) const{
+	return this->ideas[index];
+}
+
+void Brain::setIdeas(int index, std::string& idea){
+	this->ideas[index] = idea;
 }
