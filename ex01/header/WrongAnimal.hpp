@@ -6,12 +6,12 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:14:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 20:16:52 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 23:26:02 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 #include <iostream>
 
 # define BOLD_TEXT "\033[1m"
@@ -38,3 +38,5 @@ class WrongAnimal
 		void setType(std::string type);
 		void makeSound() const ;
 };
+
+#endif

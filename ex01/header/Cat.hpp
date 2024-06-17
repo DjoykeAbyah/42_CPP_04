@@ -6,13 +6,13 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:51:46 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:06:30 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 23:25:31 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include <iostream>
 #include "Animal.hpp"
 #include "Brain.hpp"
 
@@ -28,5 +28,7 @@ class Cat : public Animal
 		const Cat& operator=(const Cat& copy);
 		~Cat();
 
-		void makeSound() const;//why not virtual here?
+		void makeSound() const override;//why not virtual here?
 };
+
+#endif

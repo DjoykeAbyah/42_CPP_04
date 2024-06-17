@@ -6,19 +6,22 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:32:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:53:53 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 23:27:57 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 #include <iostream>
+#include "Animal.hpp"
 
 class Brain
 {
-	public:
+	private:
 		std::string 	ideas[100];
 		
+	public:
 		Brain();
 		Brain(const Brain& copy);
 		const Brain& operator=(const Brain& copy);
@@ -27,3 +30,5 @@ class Brain
 		std::string getIdeas(int index) const;
 		void setIdeas(int index, std::string& idea);
 };
+
+#endif

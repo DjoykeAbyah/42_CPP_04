@@ -6,11 +6,12 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:17:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 20:20:01 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 23:26:17 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
 #include "WrongAnimal.hpp"
@@ -26,3 +27,5 @@ class WrongCat : public WrongAnimal
 
 		void makeSound() const;
 };
+
+#endif

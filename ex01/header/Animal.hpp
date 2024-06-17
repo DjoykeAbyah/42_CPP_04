@@ -6,11 +6,12 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:50 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/17 22:11:47 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 23:24:45 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
 
@@ -35,6 +36,8 @@ class Animal
 		virtual ~Animal();
 		
 		const std::string& getType() const;
-		void setType(std::string type);
+		void setType(const std::string& type);
 		virtual void makeSound() const ;// virtual to overwrite
 };
+
+#endif
