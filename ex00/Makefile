@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/17 22:21:56 by dreijans      #+#    #+#                  #
-#    Updated: 2024/06/16 21:34:26 by djoyke        ########   odam.nl          #
+#    Updated: 2024/06/17 19:38:37 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,19 @@ CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 
 #sources
-SRC 		= 	main.cpp	\
-				Animal.cpp	
+SRC 		= 	./src/main.cpp		\
+				./src/Animal.cpp		\
+				./src/Cat.cpp			\
+				./src/Dog.cpp			\
+				./src/WrongAnimal.cpp	\
+				./src/WrongCat.cpp
 				
 #object files
 OBJDIR 		= obj
 OBJ			= $(addprefix $(OBJDIR)/, $(notdir $(SRC:.cpp=.o)))
+
+# Header files
+HEADERDIR	= ./header
 
 #colours
 DONE		:= \033[0m
@@ -43,9 +50,9 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(CPPFLAGS) -o $(NAME)
 	@ echo "${PURPLE}made!${DONE}"
 
-$(OBJDIR)/%.o: %.cpp
+$(OBJDIR)/%.o: ./src/%.cpp
 	@ mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -c -o $@ $^
+	$(CC) $(CFLAGS) -I $(HEADERDIR) -c -o $@ $^
 
 #cleaning
 clean:
@@ -53,9 +60,8 @@ clean:
 
 fclean: clean
 	@ rm -f $(NAME)
-	@ rm -f output.txt
 	@ echo "${YELLOW}Cleaning done${DONE}"
 
 re:	fclean all
 
-.PHONY: all clean fclean refsan
+.PHONY: all clean fclean re
