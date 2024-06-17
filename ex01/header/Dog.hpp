@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   WrongCat.hpp                                       :+:    :+:            */
+/*   Dog.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/17 20:17:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:08:02 by dreijans      ########   odam.nl         */
+/*   Created: 2024/06/17 15:51:49 by dreijans      #+#    #+#                 */
+/*   Updated: 2024/06/17 20:52:55 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-class WrongCat : public WrongAnimal
+class Dog : public Animal
 {
+	private:
+		Brain* _brain;
+		
 	public:
-		WrongCat();
-		WrongCat(const WrongCat& copy);
-		const WrongCat& operator=(const WrongCat& copy);
-		~WrongCat();
+		Dog();
+		Dog(const std::string& name);//do i need to use this?
+		Dog(const Dog& copy);
+		const Dog& operator=(const Dog& copy);
+		~Dog();
 
 		void makeSound() const;
 };

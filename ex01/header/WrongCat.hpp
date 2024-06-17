@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:17:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:08:02 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 20:20:01 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat();
+		WrongCat(const std::string& name);//do i need to use this?
 		WrongCat(const WrongCat& copy);
 		const WrongCat& operator=(const WrongCat& copy);
 		~WrongCat();

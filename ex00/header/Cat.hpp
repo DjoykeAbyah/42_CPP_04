@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:51:46 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 19:33:36 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/17 21:07:48 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Cat : public Animal
 {
 	public:
 		Cat();
-		Cat(const std::string& name);//do i need to use this?
 		Cat(const Cat& copy);
 		const Cat& operator=(const Cat& copy);
 		~Cat();

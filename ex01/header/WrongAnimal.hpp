@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Animal.hpp                                         :+:    :+:            */
+/*   WrongAnimal.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
+/*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/16 21:34:50 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/17 21:07:37 by dreijans      ########   odam.nl         */
+/*   Created: 2024/06/17 20:14:57 by dreijans      #+#    #+#                 */
+/*   Updated: 2024/06/17 20:16:52 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@
 # define YELLOW "\033[33m"
 # define MAGENTA "\033[35m"
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		std::string		_type;
 		
 	public:
-		Animal();
-		Animal(const Animal& copy);
-		const Animal& operator=(const Animal& copy);
-		virtual ~Animal();?
+		WrongAnimal();
+		WrongAnimal(const WrongAnimal& copy);
+		const WrongAnimal& operator=(const WrongAnimal& copy);
+		virtual ~WrongAnimal();
 		
 		std::string getType() const;
 		void setType(std::string type);
-		virtual void makeSound() const ;// virtual to overwrite
+		void makeSound() const ;
 };

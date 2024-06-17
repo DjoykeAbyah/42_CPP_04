@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   WrongCat.hpp                                       :+:    :+:            */
+/*   Cat.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/17 20:17:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:08:02 by dreijans      ########   odam.nl         */
+/*   Created: 2024/06/17 15:51:46 by dreijans      #+#    #+#                 */
+/*   Updated: 2024/06/17 21:06:30 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongCat : public WrongAnimal
+class Cat : public Animal
 {
+	private:
+		Brain* _brain;
+		
 	public:
-		WrongCat();
-		WrongCat(const WrongCat& copy);
-		const WrongCat& operator=(const WrongCat& copy);
-		~WrongCat();
+		Cat();
+		Cat(const std::string& name);//do i need to use this?
+		Cat(const Cat& copy);
+		const Cat& operator=(const Cat& copy);
+		~Cat();
 
-		void makeSound() const;
+		void makeSound() const;//why not virtual here?
 };
