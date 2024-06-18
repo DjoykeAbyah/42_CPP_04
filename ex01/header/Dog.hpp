@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:51:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 14:31:33 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 16:17:49 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Dog : public Animal
 		Dog(const std::string& name);
 		Dog(const Dog& copy);
 		Dog& operator=(const Dog& copy);
-		~Dog();
+		virtual ~Dog();
 
 		void setIdea(int index, const std::string& idea);
 		std::string getIdea(int index) const;
