@@ -6,7 +6,7 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:56 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/18 16:38:28 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 17:02:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int main()
 			dog->setIdea(j, "Belly rubs niceee");
 	}
 	for (int j = 0; j < 100; j++)
-		cat->getIdea(j);
+		dog->getIdea(j);
 	delete dog;
 	
 	return 0;
