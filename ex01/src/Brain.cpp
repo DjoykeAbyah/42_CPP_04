@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 21:08:55 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 12:45:18 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 15:12:42 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Brain::Brain(const Brain& copy){
 	std::cout << "Brain copy constructor called" << std::endl;
 }
 
-const Brain& Brain::operator=(const Brain& copy){
+Brain& Brain::operator=(const Brain& copy){
 	std::cout << "Brain copy assignment operator overloader called" << "\n\n";
 	if (this != &copy)
 		for (int i = 0; i < 100; i++)

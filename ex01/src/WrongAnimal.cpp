@@ -6,29 +6,36 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:17:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 12:26:02 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 15:11:49 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : _type("Default"){
+WrongAnimal::WrongAnimal() : _type("WrongAnimal"), _name("WrongAnimal Name"){
 	std::cout << "WrongAnimal default constructor called"<< RESET << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const std::string& name) : _name(name){
+WrongAnimal::WrongAnimal(const std::string& name) : _type("WrongAnimal"), _name(name){
 	std::cout << "WrongAnimal parametric constructor called"<< RESET << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& copy){
-	*this = copy;
+WrongAnimal::WrongAnimal(const WrongAnimal& copy) : _type(copy._type), _name(copy._name){
 	std::cout << "WrongAnimal copy constructor called" << RESET << std::endl;
 }
 
-const WrongAnimal& WrongAnimal::operator=(const WrongAnimal& copy){
+/**
+ * @note	assignment operators return a non-const reference
+ * 			to allow chaining of assignments
+ * @todo	figure out what chaining of assignments is
+*/
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& copy){
 	std::cout << BLUE << "WrongAnimal copy assignment operator overloader called" << RESET << "\n\n";
 	if (this != &copy)
-		this->setType(copy.getType());
+	{
+        this->_type = copy._type;
+        this->_name = copy._name;
+	}
 	return *this;
 }
 

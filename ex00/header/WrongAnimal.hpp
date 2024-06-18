@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:14:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 12:16:17 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 14:49:07 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal(const std::string& name);
 		WrongAnimal(const WrongAnimal& copy);
-		const WrongAnimal& operator=(const WrongAnimal& copy);
+		WrongAnimal& operator=(const WrongAnimal& copy);
 		virtual ~WrongAnimal();
 		
 		const std::string& getType() const;//needs to be reference?

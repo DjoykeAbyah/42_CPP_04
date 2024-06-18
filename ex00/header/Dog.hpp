@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:51:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 12:14:41 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 14:40:06 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal
 		Dog();
 		Dog(const std::string& name);
 		Dog(const Dog& copy);
-		const Dog& operator=(const Dog& copy);
+		Dog& operator=(const Dog& copy);
 		~Dog();
 
 		void makeSound() const;

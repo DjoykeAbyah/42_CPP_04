@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:32:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 12:45:08 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 14:31:49 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Brain
 	public:
 		Brain();
 		Brain(const Brain& copy);
-		const Brain& operator=(const Brain& copy);
+		Brain& operator=(const Brain& copy);
 		virtual ~Brain();
 
 		std::string getIdeas(int index) const;

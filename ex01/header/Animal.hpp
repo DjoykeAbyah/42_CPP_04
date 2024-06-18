@@ -25,7 +25,7 @@ class Animal
 		Animal();
 		Animal(const std::string& name);
 		Animal(const Animal& copy);
-		const Animal& operator=(const Animal& copy);
+		Animal& operator=(const Animal& copy);
 		virtual ~Animal();
 		
 		const std::string& getType() const;//needs to be reference?
