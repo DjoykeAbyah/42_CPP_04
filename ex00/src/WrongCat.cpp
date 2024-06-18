@@ -6,15 +6,19 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:16:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 20:20:30 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 12:19:38 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "../header/WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal(){
 	this->setType("WrongCat");
 	std::cout << "WrongCat default constructor called"<< RESET << std::endl;
+}
+
+WrongCat::WrongCat(const std::string& name) : WrongAnimal(name){
+	std::cout << "WrongCat parametric constructor called"<< RESET << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& copy){

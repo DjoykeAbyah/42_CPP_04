@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:17:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 23:26:17 by djoyke        ########   odam.nl         */
+/*   Updated: 2024/06/18 12:25:06 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@
 #include <iostream>
 #include "WrongAnimal.hpp"
 
+/**
+ * @todo 	
+ * 			1) why using override in the method
+ * 			2) check if destructor needs to be virtual
+*/
 class WrongCat : public WrongAnimal
 {
 	public:
 		WrongCat();
-		WrongCat(const std::string& name);//do i need to use this?
+		WrongCat(const std::string& name);
 		WrongCat(const WrongCat& copy);
 		const WrongCat& operator=(const WrongCat& copy);
 		~WrongCat();

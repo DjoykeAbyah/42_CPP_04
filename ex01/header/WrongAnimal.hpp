@@ -6,12 +6,13 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:14:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 23:26:02 by djoyke        ########   odam.nl         */
+/*   Updated: 2024/06/18 12:24:12 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
+
 #include <iostream>
 
 # define BOLD_TEXT "\033[1m"
@@ -23,19 +24,28 @@
 # define YELLOW "\033[33m"
 # define MAGENTA "\033[35m"
 
+/**
+ * @todo 	check if _name was correctly added
+*/
 class WrongAnimal
 {
 	protected:
 		std::string		_type;
+		std::string		_name;
 		
 	public:
 		WrongAnimal();
+		WrongAnimal(const std::string& name);
 		WrongAnimal(const WrongAnimal& copy);
 		const WrongAnimal& operator=(const WrongAnimal& copy);
 		virtual ~WrongAnimal();
 		
-		std::string getType() const;
-		void setType(std::string type);
+		const std::string& getType() const;//needs to be reference?
+		const std::string& getName() const;
+		
+		void setName(const std::string& name);
+		void setType(const std::string& type);
+
 		void makeSound() const ;
 };
 

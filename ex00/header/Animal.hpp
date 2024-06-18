@@ -6,11 +6,12 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:50 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/17 21:07:37 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 12:15:36 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
 
@@ -23,18 +24,29 @@
 # define YELLOW "\033[33m"
 # define MAGENTA "\033[35m"
 
+/**
+ * @todo 	check if _name was correctly added
+*/
 class Animal
 {
 	protected:
 		std::string		_type;
+		std::string		_name;
 		
 	public:
 		Animal();
+		Animal(const std::string& name);
 		Animal(const Animal& copy);
 		const Animal& operator=(const Animal& copy);
-		virtual ~Animal();?
+		virtual ~Animal();
 		
-		std::string getType() const;
-		void setType(std::string type);
+		const std::string& getType() const;//needs to be reference?
+		const std::string& getName() const;
+		
+		void setName(const std::string& name);
+		void setType(const std::string& type);
+		
 		virtual void makeSound() const ;// virtual to overwrite
 };
+
+#endif

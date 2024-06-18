@@ -6,15 +6,19 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:52:09 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 19:41:58 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 12:13:56 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../header/Cat.hpp"
 
 Cat::Cat() : Animal(){
 	this->setType("cat");
 	std::cout << "Cat default constructor called"<< RESET << std::endl;
+}
+
+Cat::Cat(const std::string& name) : Animal(name){
+	std::cout << "Cat parametric constructor called"<< RESET << std::endl;
 }
 
 Cat::Cat(const Cat& copy){

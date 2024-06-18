@@ -6,11 +6,12 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:51:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:07:53 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 12:14:41 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include <iostream>
 #include "Animal.hpp"
@@ -19,9 +20,12 @@ class Dog : public Animal
 {
 	public:
 		Dog();
+		Dog(const std::string& name);
 		Dog(const Dog& copy);
 		const Dog& operator=(const Dog& copy);
 		~Dog();
 
 		void makeSound() const;
 };
+
+#endif

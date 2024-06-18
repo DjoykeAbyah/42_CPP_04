@@ -6,14 +6,18 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:17:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 20:17:24 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 12:18:32 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "../header/WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : _type("Default"){
+WrongAnimal::WrongAnimal() : _type("Wrong Default"), _name("Wrong Default Name"){
 	std::cout << "WrongAnimal default constructor called"<< RESET << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const std::string& name) : _name(name){
+	std::cout << "WrongAnimal parametric constructor called"<< RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copy){
@@ -32,14 +36,21 @@ WrongAnimal::~WrongAnimal(){
 	std::cout << RED << "WrongAnimal destructor called" << RESET << std::endl;
 }
 
-void WrongAnimal::setType(std::string type){
+void WrongAnimal::setType(const std::string& type){
 	this->_type = type;
 }
 
-std::string WrongAnimal::getType() const{
+void WrongAnimal::setName(const std::string& name) {
+    this->_name = name;
+}
+
+const std::string& WrongAnimal::getType() const{
 	return this->_type;
 }
 
+const std::string& WrongAnimal::getName() const {
+	return this->_name;
+}
 
 void WrongAnimal::makeSound() const{
 	std::cout << GREEN << "WrongAnimalll!!!!" << RESET << std::endl;

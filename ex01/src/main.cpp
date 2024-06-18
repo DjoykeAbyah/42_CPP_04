@@ -6,7 +6,7 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:56 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/17 23:26:58 by djoyke        ########   odam.nl         */
+/*   Updated: 2024/06/18 11:28:32 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,9 @@ int main()
 	return 0;
 
 	//test for shallow copies
+	//test for individual thoughts meow1 meow2 woof1 woof2
+	//make array with half cat objects and half dog objects
+	//end of program loop over the array and delete every animal
+	//directly delete dogs and cat's as animal (virtual)
+	//check for leaks
 }

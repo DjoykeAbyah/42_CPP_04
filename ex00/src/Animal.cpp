@@ -6,14 +6,18 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:47 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/17 22:11:50 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 12:10:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../header/Animal.hpp"
 
-Animal::Animal() : _type("Default"){
+Animal::Animal() : _type("Default"), _name("Default name"){
 	std::cout << "Animal default constructor called"<< RESET << std::endl;
+}
+
+Animal::Animal(const std::string& name) : _name(name){
+	std::cout << "Animal parametric constructor called"<< RESET << std::endl;
 }
 
 Animal::Animal(const Animal& copy){
@@ -32,14 +36,21 @@ Animal::~Animal(){
 	std::cout << RED << "Animal destructor called" << RESET << std::endl;
 }
 
-void Animal::setType(std::string type){
+void Animal::setType(const std::string& type){
 	this->_type = type;
 }
 
-const std::string& Animal::getType() const{
-	return this->_type;//???
+void Animal::setName(const std::string& name) {
+    this->_name = name;
 }
 
+const std::string& Animal::getType() const{
+	return this->_type;
+}
+
+const std::string& Animal::getName() const {
+	return this->_name;
+}
 
 void Animal::makeSound() const{
 	std::cout << GREEN << "Animalll!!!!" << RESET << std::endl;

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:51:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 23:25:09 by djoyke        ########   odam.nl         */
+/*   Updated: 2024/06/18 12:23:40 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
+/**
+ * @todo 
+ * 			1) why using override in the method
+ * 			2) check if destructor needs to be virtual
+*/
 class Dog : public Animal
 {
 	private:
@@ -24,12 +29,12 @@ class Dog : public Animal
 		
 	public:
 		Dog();
-		Dog(const std::string& name);//do i need to use this?
+		Dog(const std::string& name);
 		Dog(const Dog& copy);
 		const Dog& operator=(const Dog& copy);
 		~Dog();
 
-		void makeSound() const override;//why override
+		void makeSound() const override;
 };
 
 #endif

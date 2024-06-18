@@ -6,11 +6,11 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 21:08:55 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:57:00 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 12:45:18 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "../header/Brain.hpp"
 
 Brain::Brain(){
 	std::cout << "Brain default constructor called"<< std::endl;
@@ -30,13 +30,13 @@ const Brain& Brain::operator=(const Brain& copy){
 }
 
 Brain::~Brain(){
-	std::cout << "Brain destructor called" << std::endl;
+	std::cout << RED << "Brain destructor called" << RESET << std::endl;
 }
 
 std::string Brain::getIdeas(int index) const{
 	return this->ideas[index];
 }
 
-void Brain::setIdeas(int index, std::string& idea){
+void Brain::setIdeas(int index, const std::string& idea){
 	this->ideas[index] = idea;
 }

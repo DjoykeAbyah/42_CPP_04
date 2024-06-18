@@ -6,15 +6,19 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:52:14 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/17 21:39:16 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/18 12:26:25 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../header/Dog.hpp"
 
 Dog::Dog() : Animal(){
 	this->setType("Dog");
 	std::cout << "Dog default constructor called"<< RESET << std::endl;
+}
+
+Dog::Dog(const std::string& name) : Animal(name){
+	std::cout << "Dog parametric constructor called"<< RESET << std::endl;
 }
 
 Dog::Dog(const Dog& copy){
