@@ -6,7 +6,7 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:47 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/19 13:30:34 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 15:46:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ Animal::Animal(const Animal& copy) : _type(copy._type), _name(copy._name){
 	std::cout << MAGENTA << "Animal " << RESET << "copy constructor called" << RESET << std::endl;
 }
 
-/**
- * @note	assignment operators return a non-const reference
- * 			to allow chaining of assignments
- * @todo	figure out what chaining of assignments is
-*/
 Animal& Animal::operator=(const Animal& copy){
 	std::cout << MAGENTA << "Animal " << RESET << YELLOW << 
 	"copy assignment operator overloader called" << RESET << std::endl;

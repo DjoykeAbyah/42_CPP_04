@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:17:49 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 16:17:57 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 15:49:39 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 #include <iostream>
 #include "WrongAnimal.hpp"
 
-/**
- * @todo 	
- * 			1) why using override in the method
- * 			2) check if destructor needs to be virtual
-*/
 class WrongCat : public WrongAnimal
 {
 	public:

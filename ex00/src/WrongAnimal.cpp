@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:17:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 14:56:18 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 15:46:50 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ WrongAnimal::WrongAnimal(const WrongAnimal& copy) : _type(copy._type), _name(cop
 	std::cout << "WrongAnimal copy constructor called" << RESET << std::endl;
 }
 
-/**
- * @note	assignment operators return a non-const reference
- * 			to allow chaining of assignments
- * @todo	figure out what chaining of assignments is
-*/
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& copy){
 	std::cout << BLUE << "WrongAnimal copy assignment operator overloader called" << RESET << "\n\n";
 	if (this != &copy)

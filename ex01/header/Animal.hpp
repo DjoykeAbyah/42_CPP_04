@@ -13,9 +13,6 @@
 # define MAGENTA "\033[35m"
 # define ORANGE "\033[38;2;255;165;0m"
 
-/**
- * @todo 	check if _name was correctly added
-*/
 class Animal
 {
 	protected:

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:51:46 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 16:17:37 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 15:49:43 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-/**
- * @todo 	
- * 			1) why using override in the method
- * 			2) check if destructor needs to be virtual
-*/
 class Cat : public Animal
 {
 	private:

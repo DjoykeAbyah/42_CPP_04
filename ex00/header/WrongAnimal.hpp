@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:14:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 14:49:07 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 15:43:36 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@
 # define YELLOW "\033[33m"
 # define MAGENTA "\033[35m"
 
-/**
- * @todo 	check if _name was correctly added
-*/
 class WrongAnimal
 {
 	protected:

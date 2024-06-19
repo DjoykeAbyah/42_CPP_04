@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:52:14 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 13:33:36 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 14:31:28 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Dog::Dog(const std::string& name) : Animal(name), _brain(new Brain()){
 }
 
 Dog::Dog(const Dog& copy) : Animal(copy), _brain(new Brain(*copy._brain)){
-	// *this = copy;//no need to copy it over if it's already initialised
 	std::cout << BLUE << "Dog " << RESET << "copy constructor called" << RESET << std::endl;
 }
 

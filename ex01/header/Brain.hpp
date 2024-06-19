@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:32:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 14:31:49 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 14:32:46 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 class Brain
 {
 	private:
-		std::string 	ideas[100];
+		std::string 	_ideas[100];
 		
 	public:
 		Brain();

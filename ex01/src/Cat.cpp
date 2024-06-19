@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:52:09 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 13:33:30 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 15:41:33 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,6 @@ Cat::Cat(const std::string& name) : Animal(name), _brain(new Brain()){
 	std::cout << BLUE << "Cat " << RESET << "parametric constructor called" << RESET << std::endl;
 }
 
-/**
- * @todo 	check if I'm actually making a deep copy for copy
- * @brief 	creates a new cat object as a copy of an existing cat object
-*/
 Cat::Cat(const Cat& copy) : Animal(copy), _brain(new Brain(*copy._brain)){
 	std::cout << BLUE << "Cat " << RESET << "copy constructor called" << RESET << std::endl;
 }
@@ -43,22 +39,6 @@ Cat& Cat::operator=(const Cat& copy){
 	return *this;
 }
 
-//shallow copy example
-//In this example, the line _brain = copy._brain; 
-//performs a shallow copy of the _brain pointer. 
-//Both Cat objects will point to the same Brain object, 
-//which is usually not desired for objects with dynamic memory.
-// Cat& Cat::operator=(const Cat& copy) {
-//     if (this != &copy) {
-//         Animal::operator=(copy);  // Copy base class part
-//         _brain = copy._brain;     // Shallow copy of the pointer
-//     }
-//     return *this;
-// }
-
-/**
- * @todo check if it's deleting everything
-*/
 Cat::~Cat(){
 	delete _brain;
 	std::cout << BLUE << "Cat " << RESET << RED << "destructor called" << RESET << std::endl;
