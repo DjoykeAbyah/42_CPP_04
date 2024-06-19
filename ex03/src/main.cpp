@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:08:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 19:47:46 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 20:43:34 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
+	src->learnMateria(new Ice());//learn first means construction
 	src->learnMateria(new Cure());
 	
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
-	tmp = src->createMateria("ice");
+	tmp = src->createMateria("ice");//also constructing parametric constr
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);

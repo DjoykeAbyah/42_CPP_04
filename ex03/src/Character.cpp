@@ -6,22 +6,22 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:47:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 19:20:04 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 20:58:27 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-/**
- * @todo do I need to call AMateria constructor?
-*/
-Character::Character() : _name("Default"){
+AMateria* Character::floor[200] = {NULL};
+int Character::floorIndex = 0;
+
+Character::Character() : _name("Default"), _inventoryIndex(0){
 	std::cout << BLUE << "Character" << RESET << "default constructor called" << RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = nullptr;
 }
 
-Character::Character(std::string const & name) : _name(name){
+Character::Character(std::string const & name) : _name(name), _inventoryIndex(0){
 	std::cout << BLUE << "Character " << RESET << "parametric constructor called" << RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = nullptr;
@@ -66,19 +66,22 @@ std::string const & Character::getName() const{
  * @todo make this function
 */
 void Character::equip(AMateria* m){
-	
+	//taking from cuboard
 }
 
 /**
  * @todo make this function
 */
 void Character::unequip(int idx){
-	
+	//check if there is something in the cuboard
+	//take it fro that index 
+	//putting on the floor
+	//if nothing there give error message pick another index
 }
 
 /**
  * @todo make this function
 */
 void Character::use(int idx, ICharacter& target){
-	
+	//check if I learned it.
 }
