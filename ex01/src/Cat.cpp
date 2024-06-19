@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:52:09 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 15:11:11 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 13:33:30 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Cat::Cat() : Animal(), _brain(new Brain()){
 	this->_type = "Cat";
-	std::cout << "Cat default constructor called"<< RESET << std::endl;
+	std::cout << BLUE << "Cat " << RESET << "default constructor called" << RESET << std::endl;
 }
 
 Cat::Cat(const std::string& name) : Animal(name), _brain(new Brain()){
-	std::cout << "Cat parametric constructor called"<< RESET << std::endl;
+	std::cout << BLUE << "Cat " << RESET << "parametric constructor called" << RESET << std::endl;
 }
 
 /**
@@ -26,7 +26,7 @@ Cat::Cat(const std::string& name) : Animal(name), _brain(new Brain()){
  * @brief 	creates a new cat object as a copy of an existing cat object
 */
 Cat::Cat(const Cat& copy) : Animal(copy), _brain(new Brain(*copy._brain)){
-	std::cout << "Cat copy constructor called" << RESET << std::endl;
+	std::cout << BLUE << "Cat " << RESET << "copy constructor called" << RESET << std::endl;
 }
 
 /**
@@ -34,7 +34,8 @@ Cat::Cat(const Cat& copy) : Animal(copy), _brain(new Brain(*copy._brain)){
  *			not just shallow copy of the pointer
 */
 Cat& Cat::operator=(const Cat& copy){
-	std::cout << BLUE << "Cat copy assignment operator overloader called" << RESET << "\n\n";
+	std::cout << BLUE << "Cat " << RESET << YELLOW << 
+	"copy assignment operator overloader called" << RESET << std::endl;
 	if (this != &copy)
 		Animal::operator=(copy);//copies base class part of cat
 		delete _brain;//delete old brain to prevent memory leak
@@ -60,7 +61,7 @@ Cat& Cat::operator=(const Cat& copy){
 */
 Cat::~Cat(){
 	delete _brain;
-	std::cout << RED << "Cat destructor called" << RESET << std::endl;
+	std::cout << BLUE << "Cat " << RESET << RED << "destructor called" << RESET << std::endl;
 }
 
 void Cat::setIdea(int index, const std::string& idea){

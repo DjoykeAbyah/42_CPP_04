@@ -11,6 +11,7 @@
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"
 # define MAGENTA "\033[35m"
+# define ORANGE "\033[38;2;255;165;0m"
 
 /**
  * @todo 	check if _name was correctly added

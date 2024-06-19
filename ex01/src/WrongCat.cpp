@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:16:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 15:12:15 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 13:33:07 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,27 @@
 
 WrongCat::WrongCat() : WrongAnimal(){
 	this->_type = "WrongCat";
-	std::cout << "WrongCat default constructor called"<< RESET << std::endl;
+	std::cout << BLUE << "WrongCat " << RESET << "default constructor called"<< RESET << std::endl;
 }
 
 WrongCat::WrongCat(const std::string& name) : WrongAnimal(name){
-	std::cout << "WrongCat parametric constructor called"<< RESET << std::endl;
+	std::cout << BLUE << "WrongCat " << RESET << "parametric constructor called"<< RESET << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat& copy) : WrongAnimal(copy){
-	std::cout << "WrongCat copy constructor called" << RESET << std::endl;
+	std::cout << BLUE << "WrongCat " << RESET << "copy constructor called" << RESET << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& copy){
-	std::cout << BLUE << "WrongCat copy assignment operator overloader called" << RESET << "\n\n";
+	std::cout << BLUE << "WrongCat " << RESET << YELLOW << 
+	"copy assignment operator overloader called" << RESET << std::endl;
 	if (this != &copy)
 		this->setType(copy.getType());
 	return *this;
 }
 
 WrongCat::~WrongCat(){
-	std::cout << RED << "WrongCat destructor called" << RESET << std::endl;
+	std::cout << BLUE << "WrongCat " << RESET << RED << "destructor called" << RESET << std::endl;
 }
 
 void WrongCat::makeSound() const{

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:14:57 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 14:32:00 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 13:09:26 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"
 # define MAGENTA "\033[35m"
+# define ORANGE "\033[38;2;255;165;0m"
 
 /**
  * @todo 	check if _name was correctly added
@@ -40,7 +41,7 @@ class WrongAnimal
 		WrongAnimal& operator=(const WrongAnimal& copy);
 		virtual ~WrongAnimal();
 		
-		const std::string& getType() const;//needs to be reference?
+		const std::string& getType() const;
 		const std::string& getName() const;
 		
 		void setName(const std::string& name);

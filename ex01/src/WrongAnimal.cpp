@@ -6,22 +6,22 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:17:11 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 15:11:49 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 13:30:28 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : _type("WrongAnimal"), _name("WrongAnimal Name"){
-	std::cout << "WrongAnimal default constructor called"<< RESET << std::endl;
+	std::cout << MAGENTA << "WrongAnimal " << RESET << "default constructor called"<< RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const std::string& name) : _type("WrongAnimal"), _name(name){
-	std::cout << "WrongAnimal parametric constructor called"<< RESET << std::endl;
+	std::cout << MAGENTA << "WrongAnimal " << RESET << "parametric constructor called"<< RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copy) : _type(copy._type), _name(copy._name){
-	std::cout << "WrongAnimal copy constructor called" << RESET << std::endl;
+	std::cout << MAGENTA << "WrongAnimal " << RESET << "copy constructor called" << RESET << std::endl;
 }
 
 /**
@@ -30,7 +30,8 @@ WrongAnimal::WrongAnimal(const WrongAnimal& copy) : _type(copy._type), _name(cop
  * @todo	figure out what chaining of assignments is
 */
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& copy){
-	std::cout << BLUE << "WrongAnimal copy assignment operator overloader called" << RESET << "\n\n";
+	std::cout << MAGENTA << "WrongAnimal " << RESET << YELLOW << 
+	"copy assignment operator overloader called" << RESET << std::endl;
 	if (this != &copy)
 	{
         this->_type = copy._type;
@@ -40,7 +41,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& copy){
 }
 
 WrongAnimal::~WrongAnimal(){
-	std::cout << RED << "WrongAnimal destructor called" << RESET << std::endl;
+	std::cout << MAGENTA << "WrongAnimal " << RESET << RED << "destructor called" << RESET << std::endl;
 }
 
 void WrongAnimal::setType(const std::string& type){

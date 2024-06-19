@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:52:14 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 15:11:04 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 13:33:36 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 Dog::Dog() : Animal(), _brain(new Brain()){
 	this->_type = "Dog";
-	std::cout << "Dog default constructor called"<< RESET << std::endl;
+	std::cout << BLUE << "Dog " << RESET << "default constructor called"<< RESET << std::endl;
 }
 
 Dog::Dog(const std::string& name) : Animal(name), _brain(new Brain()){
-	std::cout << "Dog parametric constructor called"<< RESET << std::endl;
+	std::cout << BLUE << "Dog " << RESET << "parametric constructor called"<< RESET << std::endl;
 }
 
 Dog::Dog(const Dog& copy) : Animal(copy), _brain(new Brain(*copy._brain)){
 	// *this = copy;//no need to copy it over if it's already initialised
-	std::cout << "Dog copy constructor called" << RESET << std::endl;
+	std::cout << BLUE << "Dog " << RESET << "copy constructor called" << RESET << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& copy){
-	std::cout << BLUE << "Dog copy assignment operator overloader called" << RESET << "\n\n";
+	std::cout << BLUE << "Dog " << RESET << YELLOW << 
+	"copy assignment operator overloader called" << RESET << std::endl;
 	if (this != &copy)
 		Animal::operator=(copy);
 		delete _brain;
@@ -37,7 +38,7 @@ Dog& Dog::operator=(const Dog& copy){
 
 Dog::~Dog(){
 	delete _brain;
-	std::cout << RED << "Dog destructor called" << RESET << std::endl;
+	std::cout << BLUE << "Dog " << RESET << RED << "destructor called" << RESET << std::endl;
 }
 
 void Dog::setIdea(int index, const std::string& idea){
