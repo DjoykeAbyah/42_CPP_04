@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:11:09 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 18:15:33 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:03:53 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@
 # define ORANGE "\033[38;2;255;165;0m"
 
 #include <iostream>
-#include "ICharacter.hpp"
+#include "Character.hpp"
 
+/**
+ * @todo do I need to include ICharacter.hpp or Character.hpp
+*/
 class AMateria
 {
 	protected:

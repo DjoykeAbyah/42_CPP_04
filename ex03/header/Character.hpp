@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:38:47 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 18:58:50 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:13:18 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,17 @@
 # define ORANGE "\033[38;2;255;165;0m"
 
 #include <iostream>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 /**
  * @todo inventory needs to be of type AMateria?
 */
-class Character
+class Character : public ICharacter
 {
 	private:
 		std::string _name;
-		int _inventory[4]; //needs to be of type AMateria?
+		AMateria* _inventory[4]; //needs to be of type AMateria?
 
 	public:
 		Character();
@@ -42,7 +44,11 @@ class Character
 		virtual ~Character();
 		
 		void setName(const std::string name);
-		std::string const & getName() const;
+		std::string const & getName() const override;
+
+		void equip(AMateria* m) override;
+    	void unequip(int idx) override;
+    	void use(int idx, ICharacter& target) override;
 };
 
 #endif

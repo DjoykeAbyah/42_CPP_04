@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/17 22:21:56 by dreijans      #+#    #+#                  #
-#    Updated: 2024/06/19 17:52:48 by dreijans      ########   odam.nl          #
+#    Updated: 2024/06/19 19:27:37 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,12 @@ CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 
 #sources
-SRC 		= 	./src/main.cpp			\
-				./src/Amateria.cpp		\
-				./src/Cure.cpp			\
-				./src/Ice.cpp			\
-				./src/ICharacter.cpp	\
-				./src/IMateria.cpp
+SRC 		= 	./src/main.cpp				\
+				./src/Amateria.cpp			\
+				./src/Cure.cpp				\
+				./src/Ice.cpp				\
+				./src/Character.cpp			\
+				./src/MateriaSource.cpp
 				
 #object files
 OBJDIR 		= obj

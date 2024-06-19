@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:14:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 18:39:39 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:04:59 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
+/**
+ * @todo which headers do I need to include?
+*/
 class Ice : public AMateria
 {
 	private:

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:14:19 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 18:46:11 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:04:52 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include "ICharacter.hpp"//need to include this?
 #include "Character.hpp"
 
+/**
+ * @todo which headers do I need to include?
+*/
 class Cure : public AMateria
 {
 	private:
