@@ -6,22 +6,22 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:52:09 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 15:41:33 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 16:02:51 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal(), _brain(new Brain()){
+Cat::Cat() : AAnimal(), _brain(new Brain()){
 	this->_type = "Cat";
 	std::cout << BLUE << "Cat " << RESET << "default constructor called" << RESET << std::endl;
 }
 
-Cat::Cat(const std::string& name) : Animal(name), _brain(new Brain()){
+Cat::Cat(const std::string& name) : AAnimal(name), _brain(new Brain()){
 	std::cout << BLUE << "Cat " << RESET << "parametric constructor called" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat& copy) : Animal(copy), _brain(new Brain(*copy._brain)){
+Cat::Cat(const Cat& copy) : AAnimal(copy), _brain(new Brain(*copy._brain)){
 	std::cout << BLUE << "Cat " << RESET << "copy constructor called" << RESET << std::endl;
 }
 
@@ -33,7 +33,7 @@ Cat& Cat::operator=(const Cat& copy){
 	std::cout << BLUE << "Cat " << RESET << YELLOW << 
 	"copy assignment operator overloader called" << RESET << std::endl;
 	if (this != &copy)
-		Animal::operator=(copy);//copies base class part of cat
+		AAnimal::operator=(copy);//copies base class part of cat
 		delete _brain;//delete old brain to prevent memory leak
 		_brain = new Brain(*copy._brain);// create new brain as deep copy part of copy's brain
 	return *this;

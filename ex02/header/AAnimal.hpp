@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 #include <iostream>
 
@@ -13,18 +13,18 @@
 # define MAGENTA "\033[35m"
 # define ORANGE "\033[38;2;255;165;0m"
 
-class Animal
+class AAnimal
 {
 	protected:
 		std::string		_type;
 		std::string		_name;
 		
 	public:
-		Animal();
-		Animal(const std::string& name);
-		Animal(const Animal& copy);
-		Animal& operator=(const Animal& copy);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(const std::string& name);
+		AAnimal(const AAnimal& copy);
+		AAnimal& operator=(const AAnimal& copy);
+		virtual ~AAnimal();
 		
 		const std::string& getType() const;//needs to be reference?
 		const std::string& getName() const;
@@ -32,7 +32,7 @@ class Animal
 		void setName(const std::string& name);
 		void setType(const std::string& type);
 		
-		virtual void makeSound() const ;// virtual to overwrite
+		virtual void makeSound() const = 0;// making this a pure method
 };
 
 #endif

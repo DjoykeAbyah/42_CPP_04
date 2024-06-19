@@ -6,7 +6,7 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/17 22:21:56 by dreijans      #+#    #+#                  #
-#    Updated: 2024/06/17 20:31:59 by dreijans      ########   odam.nl          #
+#    Updated: 2024/06/19 16:03:26 by dreijans      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CPPFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 
 #sources
 SRC 		= 	./src/main.cpp			\
-				./src/Animal.cpp		\
+				./src/AAnimal.cpp		\
 				./src/Cat.cpp			\
 				./src/Dog.cpp			\
 				./src/WrongAnimal.cpp	\

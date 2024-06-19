@@ -6,22 +6,22 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:52:14 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 14:31:28 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 16:03:15 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/Dog.hpp"
 
-Dog::Dog() : Animal(), _brain(new Brain()){
+Dog::Dog() : AAnimal(), _brain(new Brain()){
 	this->_type = "Dog";
 	std::cout << BLUE << "Dog " << RESET << "default constructor called"<< RESET << std::endl;
 }
 
-Dog::Dog(const std::string& name) : Animal(name), _brain(new Brain()){
+Dog::Dog(const std::string& name) : AAnimal(name), _brain(new Brain()){
 	std::cout << BLUE << "Dog " << RESET << "parametric constructor called"<< RESET << std::endl;
 }
 
-Dog::Dog(const Dog& copy) : Animal(copy), _brain(new Brain(*copy._brain)){
+Dog::Dog(const Dog& copy) : AAnimal(copy), _brain(new Brain(*copy._brain)){
 	std::cout << BLUE << "Dog " << RESET << "copy constructor called" << RESET << std::endl;
 }
 
@@ -29,7 +29,7 @@ Dog& Dog::operator=(const Dog& copy){
 	std::cout << BLUE << "Dog " << RESET << YELLOW << 
 	"copy assignment operator overloader called" << RESET << std::endl;
 	if (this != &copy)
-		Animal::operator=(copy);
+		AAnimal::operator=(copy);
 		delete _brain;
 		_brain = new Brain(*copy._brain);
 	return *this;

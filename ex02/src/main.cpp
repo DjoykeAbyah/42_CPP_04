@@ -6,11 +6,11 @@
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:56 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/19 15:44:11 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 16:05:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/Animal.hpp"
+#include "../header/AAnimal.hpp"
 #include "../header/Cat.hpp"
 #include "../header/Dog.hpp"
 #include "../header/Brain.hpp"
@@ -22,17 +22,16 @@ int main()
 	{
 		std::cout << "\n" << BOLD_TEXT << MAGENTA << "Basic test from subject" << RESET << std::endl;
 		
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
+		const AAnimal* j = new Dog();
+		const AAnimal* i = new Cat();
 		delete j;
 		delete i;	
 	}
 	{
 		std::cout << "\n" << BOLD_TEXT << MAGENTA << "Parametric constructor test" << RESET << std::endl;
 
-		const Animal* fluffy = new Cat("Fluffy");
-		const Animal* wouwz = new Cat("Wouwz");
-		const Animal* thing = new Animal("Thing");
+		const AAnimal* fluffy = new Cat("Fluffy");
+		const AAnimal* wouwz = new Cat("Wouwz");
 		const WrongAnimal* whatsThat = new WrongAnimal("Iewl");
 		const WrongCat* puma = new WrongCat("Puma");
 
@@ -44,10 +43,6 @@ int main()
 					<< "'s name is: " << ORANGE << wouwz->getName() << RESET 
 					<< ". And it makes this sound: ";
 		wouwz->makeSound();
-		std::cout 	<< "this type: "<< ORANGE << thing->getType() << RESET 
-					<< "'s name is: " << ORANGE << thing->getName() << RESET 
-					<< ". And it makes this sound: ";
-		thing->makeSound(); 
 		std::cout 	<< "this type: "<< ORANGE << whatsThat->getType() << RESET 
 					<< "'s name is: " << ORANGE << whatsThat->getName() << RESET 
 					<< ". And it makes this sound: ";
@@ -60,7 +55,6 @@ int main()
 		
 		delete fluffy;
 		delete wouwz;
-		delete thing;
 		delete whatsThat;
 		delete puma;
 	}
@@ -147,7 +141,7 @@ int main()
 		std::cout  <<  BOLD_TEXT << MAGENTA << "Sounds of cats and dogs test" << RESET << std::endl;
 		std::cout  <<  BOLD_TEXT << MAGENTA << "Deleting array of cats and dogs test" << RESET << std::endl;
 		
-		Animal* animalCafe[10];
+		AAnimal* animalCafe[10];
 		
 		for (int i = 0; i < 10; i++)
 		{

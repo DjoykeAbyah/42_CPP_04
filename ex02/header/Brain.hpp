@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 20:32:03 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 14:32:46 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 16:03:56 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define BRAIN_HPP
 
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 # define BOLD_TEXT "\033[1m"
 # define RESET "\033[0m"
