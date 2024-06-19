@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:38:47 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 19:13:18 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:29:00 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@
 #include "ICharacter.hpp"
 
 /**
- * @todo inventory needs to be of type AMateria?
+ * @todo 	inventory needs to be of type AMateria?
+ * 			which headers need to be included?
 */
 class Character : public ICharacter
 {

@@ -6,11 +6,17 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:08:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 19:27:02 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:31:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Amateria.hpp"
+#include "Amateria.hpp"// need this?
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "ICharacter.hpp"
+#include "IMateriasource.hpp"//need this?
+#include "MateriaSource.hpp"
 
 int main()
 {
