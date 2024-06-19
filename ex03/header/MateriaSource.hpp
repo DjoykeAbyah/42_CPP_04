@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 19:21:34 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 20:46:50 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 22:44:59 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria* cupboardInventory[4];
+		AMateria* _cupboardInventory[4];
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource& copy);

@@ -12,4 +12,41 @@
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource() : 
+MateriaSource::MateriaSource(){
+	std::cout << BLUE << "MateriaSource" << RESET << "default constructor called" << RESET << std::endl;
+	for (int i = 0; i < 4; i++)
+		_cupboardInventory[i] = nullptr;
+}
+
+MateriaSource::MateriaSource(){
+	std::cout << BLUE << "MateriaSource" << RESET << "default constructor called" << RESET << std::endl;
+	for (int i = 0; i < 4; i++)
+		_cupboardInventory[i] = nullptr;
+}
+
+MateriaSource::MateriaSource(const MateriaSource& copy) : MateriaSource(copy){
+	std::cout << BLUE << "MateriaSource " << RESET << "copy constructor called" << RESET << std::endl;
+	for (int i = 0; i < 4; i++)
+		delete _cupboardInventory[i];
+	for (int i = 0; i < 4; i++)
+		this->_cupboardInventory[i] = copy._cupboardInventory[i];
+}
+
+MateriaSource& MateriaSource::operator=(const MateriaSource& copy){
+	std::cout << BLUE << "MateriaSource " << RESET << YELLOW << 
+	"copy assignment operator overloader called" << RESET << std::endl;
+	if (this != &copy)
+	{
+		for (int i = 0; i < 4; i++)
+			delete _cupboardInventory[i];
+		for (int i = 0; i < 4; i++)
+			this->_cupboardInventory[i] = copy._cupboardInventory[i];
+	}
+	return *this;	
+}
+
+MateriaSource::~MateriaSource(){
+	std::cout << MAGENTA << "MateriaSource " << RESET << RED << " destructor called" << RESET << std::endl;
+	for (int i = 0; i < 4; i++)
+		delete this->_cupboardInventory[i];
+}
