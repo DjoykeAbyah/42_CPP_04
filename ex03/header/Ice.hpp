@@ -6,18 +6,29 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:14:22 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 16:15:39 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 18:27:38 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Ice_HPP
 # define Ice_HPP
 
-class Ice
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+
+class Ice : public AMateria
 {
 	private:
 
 	public:
+		Ice();
+		Ice(std::string const & type);
+		Ice(const Ice& copy);
+		Ice& operator=(const Ice& copy);
+		virtual ~Ice();
+
+		Ice* clone() const override;
+		void use(ICharacter& target) override;
 };
 
 #endif

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Animal.cpp                                         :+:    :+:            */
+/*   AAnimal.cpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: djoyke <djoyke@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/16 21:34:47 by djoyke        #+#    #+#                 */
-/*   Updated: 2024/06/19 16:01:22 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 18:09:19 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,4 @@ const std::string& AAnimal::getType() const{
 
 const std::string& AAnimal::getName() const {
 	return this->_name;
-}
-
-void AAnimal::makeSound() const{
-	std::cout << GREEN << "AAnimalll!!!!" << RESET << std::endl;
 }
