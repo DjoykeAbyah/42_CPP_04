@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:38:47 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 20:57:59 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 21:01:50 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ class Character : public ICharacter
 		
 		void setName(const std::string name);
 		std::string const & getName() const override;
+
+		void equip(AMateria* m) override;
+		void unequip(int idx) override;
+		void use(int idx, ICharacter& target) override;
 };
 
 #endif

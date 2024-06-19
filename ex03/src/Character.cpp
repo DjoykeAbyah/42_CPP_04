@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:47:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 20:58:27 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 21:28:44 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,26 +62,40 @@ std::string const & Character::getName() const{
 	return this->_name;
 }
 
-/**
- * @todo make this function
-*/
 void Character::equip(AMateria* m){
-	//taking from cuboard
+	if (!m)
+		return;
+	if (_inventoryIndex > 3)
+	{
+		std::cout << "cupboard is already full" << std::endl;
+		return ;
+	}
+	this->_inventory[_inventoryIndex] = m;
+	_inventoryIndex++;
 }
 
 /**
  * @todo make this function
 */
 void Character::unequip(int idx){
-	//check if there is something in the cuboard
-	//take it fro that index 
-	//putting on the floor
-	//if nothing there give error message pick another index
+	if (_inventoryIndex > 0 || (idx >= 0 && idx < _inventoryIndex))
+	{
+		floor[floorIndex] = _inventory[idx];
+		_inventory[idx] = NULL;
+	}
+	else
+		return ;
 }
 
 /**
  * @todo make this function
 */
 void Character::use(int idx, ICharacter& target){
-	//check if I learned it.
+	if (idx < 0 || idx >= _inventoryIndex)
+	{
+		if (!_inventory[idx])
+			std::cout << "Nothing there to use" << std::endl;
+	}
+	else
+		AMateria::use(idx, target);
 }
