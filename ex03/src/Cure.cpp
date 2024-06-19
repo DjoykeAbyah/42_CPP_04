@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:16:08 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 18:36:48 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 18:47:12 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ Cure* Cure::clone() const{
 	return new Cure(*this);
 }
 
+/**
+ * @todo adjust this method once character is done
+*/
 void Cure::use(ICharacter& target){
 	std::cout << CYAN << "* heals " 
-	<< YELLOW << target << RESET << CYAN <<  "'s wounds *" << RESET << std::endl;
+	<< YELLOW << this->target._name << RESET << CYAN <<  "'s wounds *" << RESET << std::endl;
 }

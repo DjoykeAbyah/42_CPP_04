@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:09:04 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 18:12:05 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:01:22 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ std::string const &AMateria::getType() const{
 }
 
 /**
- * @todo write this function
+ * @todo adjust this method once character is done
 */
 void AMateria::use(ICharacter& target){
-	
+	std::cout << CYAN << "* does something concerning " 
+	<< YELLOW << this->target._name << RESET << CYAN <<  "*" << RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:14:19 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 18:28:01 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 18:46:11 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"//need to include this?
+#include "Character.hpp"
 
 class Cure : public AMateria
 {

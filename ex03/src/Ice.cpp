@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:16:23 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 18:36:58 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 18:47:03 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ Ice* Ice::clone() const{
 	return new Ice(*this);
 }
 
+/**
+ * @todo adjust this method once character is done
+*/
 void Ice::use(ICharacter& target){
 	std::cout << CYAN << "* shoots an ice bolt at " 
-	<< YELLOW << target << RESET << CYAN <<  "*" << RESET << std::endl;
+	<< YELLOW << this->target._name << RESET << CYAN <<  "*" << RESET << std::endl;
 }
