@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:22:45 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 19:06:07 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:43:56 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 #include "AMateria.hpp"
 
-/**
- * @todo which headers do I need to include?
-*/
 class IMateriaSource
 {
 	public:

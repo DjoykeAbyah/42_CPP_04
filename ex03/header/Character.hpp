@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:38:47 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 19:29:00 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:44:35 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,18 @@
 
 /**
  * @todo 	inventory needs to be of type AMateria?
- * 			which headers need to be included?
+ * 			what attributes do I need to add?
 */
 class Character : public ICharacter
 {
 	private:
 		std::string _name;
+		//need items count?
 		AMateria* _inventory[4]; //needs to be of type AMateria?
 
 	public:
+		//need index?
+		//need Amateria floor?
 		Character();
 		Character(std::string const & name);
 		Character(const Character& copy);

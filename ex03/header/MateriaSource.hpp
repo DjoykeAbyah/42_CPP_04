@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 19:21:34 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 19:26:04 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:43:51 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@
 #include "IMateriasource.hpp"
 
 /**
- * @todo which headers do I need to include?
+ * @todo need to add attributes
 */
-class MateriaSource :IMateriaSource
+class MateriaSource : public IMateriaSource
 {
 	private:
-
+		//need AMateria cupboard?
+		//need shelf int?
 	public:
 		MateriaSource();
-		MateriaSource(std::string const & name);
 		MateriaSource(const MateriaSource& copy);
+		MateriaSource& operator=(const MateriaSource& copy);
+		virtual ~MateriaSource();
 		
-		
+		void learnMateria(AMateria*) override;
+		AMateria* createMateria(std::string const & type) override;
 };
 
 #endif

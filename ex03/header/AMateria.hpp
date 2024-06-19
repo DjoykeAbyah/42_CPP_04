@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:11:09 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 19:03:53 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 19:44:42 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@
 #include <iostream>
 #include "Character.hpp"
 
-/**
- * @todo do I need to include ICharacter.hpp or Character.hpp
-*/
 class AMateria
 {
 	protected:
@@ -42,7 +39,8 @@ class AMateria
 		virtual ~AMateria();
 		
 		void setType(const std::string type);
-		std::string const & getType() const; //Returns the materia type
+		std::string const & getType() const;
+		
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
