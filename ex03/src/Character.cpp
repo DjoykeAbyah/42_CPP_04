@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:47:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 21:28:44 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 23:37:28 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void Character::equip(AMateria* m){
 		std::cout << "cupboard is already full" << std::endl;
 		return ;
 	}
-	this->_inventory[_inventoryIndex] = m;
+	this->_inventory[_inventoryIndex] = m;//assing the AMateria to the index of the inventory
 	_inventoryIndex++;
 }
 
@@ -78,18 +78,22 @@ void Character::equip(AMateria* m){
  * @todo make this function
 */
 void Character::unequip(int idx){
-	if (_inventoryIndex > 0 || (idx >= 0 && idx < _inventoryIndex))
-	{
-		floor[floorIndex] = _inventory[idx];
-		_inventory[idx] = NULL;
-	}
-	else
-		return ;
+    if ((idx >= 0 && idx < _inventoryIndex) && _inventory[idx])
+    {
+        if (floorIndex < 200) // Assuming the size of _floor is 200
+        {
+            floor[floorIndex] = _inventory[idx];//move item to the floor
+            _inventory[_inventoryIndex] = nullptr;//marks it in the inventory as empty
+            for (int i = idx; i < _inventoryIndex - 1; i++)//shifting items in inventory to the left
+                _inventory[i] = _inventory[i + 1];//assign item at position i + 1 to i to shift to the left
+            _inventory[_inventoryIndex - 1] = nullptr;//sets last item to nullptr
+            _inventoryIndex--;
+            floorIndex++;
+        }
+    }
 }
 
-/**
- * @todo make this function
-*/
+
 void Character::use(int idx, ICharacter& target){
 	if (idx < 0 || idx >= _inventoryIndex)
 	{
@@ -97,5 +101,5 @@ void Character::use(int idx, ICharacter& target){
 			std::cout << "Nothing there to use" << std::endl;
 	}
 	else
-		AMateria::use(idx, target);
+		_inventory[idx]->use(target);//AMateria attribute uses the AMateria function
 }
