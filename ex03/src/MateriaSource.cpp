@@ -62,5 +62,13 @@ void MateriaSource::learnMateria(AMateria*){
  * @todo make this function
 */
 AMateria* MateriaSource::createMateria(std::string const & type){
-
+	if (type == "cure")
+		return new Cure(type);
+	if (type == "ice")
+		return new Ice(type);
+	else
+	{
+		std::cout <<"can't create this type"<< std::endl;
+		return nullptr;
+	}
 }
