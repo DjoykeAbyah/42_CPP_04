@@ -50,3 +50,17 @@ MateriaSource::~MateriaSource(){
 	for (int i = 0; i < 4; i++)
 		delete this->_cupboardInventory[i];
 }
+
+/**
+ * @todo make this function
+*/
+void MateriaSource::learnMateria(AMateria*){
+
+}
+
+/**
+ * @todo make this function
+*/
+AMateria* MateriaSource::createMateria(std::string const & type){
+
+}

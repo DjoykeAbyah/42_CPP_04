@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:19:39 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 21:16:26 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/19 23:38:30 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ICharacter
 {
 	public:
-		virtual ~ICharacter() {}//we don't need this right?
+		virtual ~ICharacter() {}
 		virtual std::string const & getName() const = 0;
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
