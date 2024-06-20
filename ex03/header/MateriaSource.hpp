@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 19:21:34 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/20 17:50:25 by djoyke        ########   odam.nl         */
+/*   Updated: 2024/06/20 17:57:44 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class MateriaSource : public IMateriaSource
 		MateriaSource& operator=(const MateriaSource& copy);
 		virtual ~MateriaSource();
 
-		void learnMateria(AMateria*) override;
+		void learnMateria(AMateria* m) override;
 		AMateria* createMateria(std::string const & type) override;
 };
 

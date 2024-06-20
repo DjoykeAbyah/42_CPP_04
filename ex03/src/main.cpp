@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:08:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/19 23:48:34 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/20 17:56:31 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
-	// src->learnMateria(new Ice());//learn first means construction
-	// src->learnMateria(new Cure());
+	src->learnMateria(new Ice());//learn first means construction
+	src->learnMateria(new Cure());
 	
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
