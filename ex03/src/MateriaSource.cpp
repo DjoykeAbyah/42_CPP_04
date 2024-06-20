@@ -12,13 +12,13 @@
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(){
+MateriaSource::MateriaSource() : _indexCupboard(0){
 	std::cout << BLUE << "MateriaSource" << RESET << "default constructor called" << RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		_cupboardInventory[i] = nullptr;
 }
 
-MateriaSource::MateriaSource(){
+MateriaSource::MateriaSource() : _indexCupboard(0){
 	std::cout << BLUE << "MateriaSource" << RESET << "default constructor called" << RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		_cupboardInventory[i] = nullptr;
@@ -30,6 +30,7 @@ MateriaSource::MateriaSource(const MateriaSource& copy) : MateriaSource(copy){
 		delete _cupboardInventory[i];
 	for (int i = 0; i < 4; i++)
 		this->_cupboardInventory[i] = copy._cupboardInventory[i];
+	this->_indexCupboard = copy._indexCupboard;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& copy){
@@ -41,6 +42,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& copy){
 			delete _cupboardInventory[i];
 		for (int i = 0; i < 4; i++)
 			this->_cupboardInventory[i] = copy._cupboardInventory[i];
+		this->_indexCupboard = copy._indexCupboard;
 	}
 	return *this;	
 }
@@ -53,22 +55,37 @@ MateriaSource::~MateriaSource(){
 
 /**
  * @todo make this function
+ * learnMateria(AMateria*)
+Copies the Materia passed as a parameter and store it in memory so it can be cloned
+later. Like the Character, the MateriaSource can know at most 4 Materias. They
+are not necessarily unique.
 */
-void MateriaSource::learnMateria(AMateria*){
-
+void MateriaSource::learnMateria(AMateria* m){
+	if (!m)
+		return ;
+	if (_indexCupboard = 4)
+	{
+		std::cout << "cupboard is full" << std::endl;
+		return ;
+	}
+	_cupboardInventory[_indexCupboard] = m;
+	_indexCupboard++;
 }
 
 /**
- * @todo make this function
+ * @brief 
+ * 			creates MateriaSource equal to type
+ * @return
+ * 			Returns 0 if the type is unknown.
+ * 			Returns a new Materia (copy of the Materia previously learned)
+ * @note 
+ * 			_cupboardInventory[i] is a pointer to an object, not an object itself. 
+ * 			Therefore, you need to use the -> operator to access the members 
+ * 			of the object pointed to by _cupboardInventory[i].
 */
 AMateria* MateriaSource::createMateria(std::string const & type){
-	if (type == "cure")
-		return new Cure(type);
-	if (type == "ice")
-		return new Ice(type);
-	else
-	{
-		std::cout <<"can't create this type"<< std::endl;
-		return nullptr;
-	}
+	for (int i = 0; i < 4; i++)
+		if (type == _cupboardInventory[i]->getType())
+			return _cupboardInventory[i]->clone();
+	return 0;
 }
