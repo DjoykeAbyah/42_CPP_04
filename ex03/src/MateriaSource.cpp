@@ -59,9 +59,10 @@ void MateriaSource::learnMateria(AMateria* m){
 		return ;
 	if (_indexCupboard == 4)
 	{
-		std::cout << "cupboard is full" << std::endl;
+		std::cout << "* cupboard is full *" << std::endl;
 		return ;
 	}
+	std::cout << "* Materia " << YELLOW << m->getType() << RESET << " learned *" << std::endl;
 	_cupboardInventory[_indexCupboard] = m;
 	_indexCupboard++;
 }
@@ -79,7 +80,10 @@ void MateriaSource::learnMateria(AMateria* m){
 */
 AMateria* MateriaSource::createMateria(std::string const & type){
 	for (int i = 0; i < 4; i++)
-		if (type == _cupboardInventory[i]->getType())
+	{
+		if (_cupboardInventory[i] && type == _cupboardInventory[i]->getType())
 			return _cupboardInventory[i]->clone();
+	}
+	std::cout << "* can't learn this Materia you call " << YELLOW << type << " *" << std::endl;
 	return 0;
 }

@@ -6,12 +6,12 @@
 #    By: dreijans <dreijans@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/17 22:21:56 by dreijans      #+#    #+#                  #
-#    Updated: 2024/06/20 21:15:56 by djoyke        ########   odam.nl          #
+#    Updated: 2024/06/20 22:26:04 by djoyke        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 #executable
-NAME 		= animal
+NAME 		= materia
 
 #compiler + flags
 CC			= c++
