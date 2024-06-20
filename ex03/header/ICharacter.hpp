@@ -6,14 +6,17 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:19:39 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/20 18:12:46 by djoyke        ########   odam.nl         */
+/*   Updated: 2024/06/20 20:59:35 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-#include "AMateria.hpp"
+#include <iostream>
+#include <string>
+
+class AMateria; // Forward declaration
 
 class ICharacter
 {

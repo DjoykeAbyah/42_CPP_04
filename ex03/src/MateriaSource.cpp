@@ -18,13 +18,7 @@ MateriaSource::MateriaSource() : _indexCupboard(0){
 		_cupboardInventory[i] = nullptr;
 }
 
-MateriaSource::MateriaSource() : _indexCupboard(0){
-	std::cout << BLUE << "MateriaSource" << RESET << "default constructor called" << RESET << std::endl;
-	for (int i = 0; i < 4; i++)
-		_cupboardInventory[i] = nullptr;
-}
-
-MateriaSource::MateriaSource(const MateriaSource& copy) : MateriaSource(copy){
+MateriaSource::MateriaSource(const MateriaSource& copy) : _indexCupboard(copy._indexCupboard) {
 	std::cout << BLUE << "MateriaSource " << RESET << "copy constructor called" << RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete _cupboardInventory[i];
@@ -63,7 +57,7 @@ are not necessarily unique.
 void MateriaSource::learnMateria(AMateria* m){
 	if (!m)
 		return ;
-	if (_indexCupboard = 4)
+	if (_indexCupboard == 4)
 	{
 		std::cout << "cupboard is full" << std::endl;
 		return ;

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:11:09 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/20 18:13:49 by djoyke        ########   odam.nl         */
+/*   Updated: 2024/06/20 20:59:56 by djoyke        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 # define ORANGE "\033[38;2;255;165;0m"
 
 #include <iostream>
-#include "Character.hpp"
+#include <string>
+#include "ICharacter.hpp"
 
 class AMateria
 {
