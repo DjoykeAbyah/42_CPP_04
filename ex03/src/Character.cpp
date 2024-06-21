@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:47:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/20 21:04:05 by djoyke        ########   odam.nl         */
+/*   Updated: 2024/06/21 22:51:57 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Character::Character(const Character& copy) : _name(copy._name), _inventoryIndex
 	for (int i = 0; i < 4; i++)
 		delete this->_inventory[i];
 	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = copy._inventory[i];
+		this->_inventory[i] = copy._inventory[i]->clone();
 	//need to check for no inventory?
 }
 
@@ -44,7 +44,7 @@ Character& Character::operator=(const Character& copy){
 		for (int i = 0; i < 4; i++)
 			delete _inventory[i];
 		for (int i = 0; i < 4; i++)
-			this->_inventory[i] = copy._inventory[i];
+			this->_inventory[i] = copy._inventory[i]->clone();
 	}
 	return *this;	
 }
@@ -75,32 +75,23 @@ void Character::equip(AMateria* m){
 	_inventoryIndex++;
 }
 
-/**
- * @todo make this function
-*/
 void Character::unequip(int idx){
-    if ((idx >= 0 && idx < _inventoryIndex) && _inventory[idx])
+    if ((idx >= 0 && idx < 4) && _inventory[idx])
     {
-        if (floorIndex < 200) // Assuming the size of _floor is 200
+        if (floorIndex < 200) // Assuming the size of floor is 200
         {
             floor[floorIndex] = _inventory[idx];//move item to the floor
-            _inventory[_inventoryIndex] = nullptr;//marks it in the inventory as empty
-            for (int i = idx; i < _inventoryIndex - 1; i++)//shifting items in inventory to the left
-                _inventory[i] = _inventory[i + 1];//assign item at position i + 1 to i to shift to the left
-            _inventory[_inventoryIndex - 1] = nullptr;//sets last item to nullptr
-            _inventoryIndex--;
             floorIndex++;
+            _inventory[idx] = nullptr;//marks it in the inventory as empty
         }
+        _inventoryIndex--;
     }
+	std::cout << "* Put item on the floor *" << std::endl;
 }
 
-
 void Character::use(int idx, ICharacter& target){
-	if (idx < 0 || idx >= _inventoryIndex)
-	{
-		if (!_inventory[idx])
-			std::cout << "Nothing there to use" << std::endl;
-	}
+	if (idx < 0 || idx >= _inventoryIndex || !_inventory[idx])
+		std::cout << "Nothing there to use" << std::endl;
 	else
 		_inventory[idx]->use(target);//AMateria attribute uses the AMateria function
 }

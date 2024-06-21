@@ -13,7 +13,7 @@
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource() : _indexCupboard(0){
-	std::cout << BLUE << "MateriaSource" << RESET << "default constructor called" << RESET << std::endl;
+	std::cout << BLUE << "MateriaSource " << RESET << "default constructor called" << RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		_cupboardInventory[i] = nullptr;
 }
@@ -21,9 +21,12 @@ MateriaSource::MateriaSource() : _indexCupboard(0){
 MateriaSource::MateriaSource(const MateriaSource& copy) : _indexCupboard(copy._indexCupboard) {
 	std::cout << BLUE << "MateriaSource " << RESET << "copy constructor called" << RESET << std::endl;
 	for (int i = 0; i < 4; i++)
-		delete _cupboardInventory[i];
-	for (int i = 0; i < 4; i++)
-		this->_cupboardInventory[i] = copy._cupboardInventory[i];
+	{
+		if (copy._cupboardInventory[i])
+			this->_cupboardInventory[i] = copy._cupboardInventory[i]->clone();
+		else
+			_cupboardInventory[i] = NULL;
+	}
 	this->_indexCupboard = copy._indexCupboard;
 }
 
@@ -33,9 +36,10 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& copy){
 	if (this != &copy)
 	{
 		for (int i = 0; i < 4; i++)
+		{
 			delete _cupboardInventory[i];
-		for (int i = 0; i < 4; i++)
-			this->_cupboardInventory[i] = copy._cupboardInventory[i];
+			this->_cupboardInventory[i] = copy._cupboardInventory[i]->clone();
+		}
 		this->_indexCupboard = copy._indexCupboard;
 	}
 	return *this;	
@@ -60,6 +64,7 @@ void MateriaSource::learnMateria(AMateria* m){
 	if (_indexCupboard == 4)
 	{
 		std::cout << "* cupboard is full *" << std::endl;
+		delete m;
 		return ;
 	}
 	std::cout << "* Materia " << YELLOW << m->getType() << RESET << " learned *" << std::endl;
@@ -84,6 +89,6 @@ AMateria* MateriaSource::createMateria(std::string const & type){
 		if (_cupboardInventory[i] && type == _cupboardInventory[i]->getType())
 			return _cupboardInventory[i]->clone();
 	}
-	std::cout << "* can't learn this Materia you call " << YELLOW << type << " *" << std::endl;
-	return 0;
+	std::cout << "* can't create this Materia you call " << YELLOW << type << " *" << RESET << std::endl;
+	return NULL;
 }
