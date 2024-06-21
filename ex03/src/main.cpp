@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:08:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/21 22:52:32 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/21 23:15:38 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,28 +95,62 @@ int main()
         djoyke->equip(tmp);
         delete(tmp);
 
+		// Use equipped Materias
         for (int i = 0; i < 4; i++)
             djoyke->use(i, *jeff);
 
+		// Unequip all materia
         for (int i = 0; i < 4; i++)
             djoyke->unequip(i);
 		
+		// Clean dynamically allocated memory for AMateria objectsloor
     	for (int i = 0; i < Character::floorIndex; i++)
         	delete Character::floor[i];
 			
-
+		// Clean dynamically allocated memory
         delete djoyke;
         delete jeff;
         delete src;
     }
-	
-	
-	
-	// Using the copy constructor to make a deep copy of a character
-	// Use the overloaded assignment operator to copy character
-	// Unequip all materia
-	// Use equipped Materias (Also checking for unequipped materia) 
-	// Clean up dynamically allocated memory
-	// Clean up dynamically allocated memory for AMateria objects in/on _floor
+	{
+		// Using the copy constructor to make a deep copy of a character
+		// Use the overloaded assignment operator to copy character
+		// Using the copy constructor to make a deep copy of a character
+		IMateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		std::cout << std::endl;
+
+		Character* og_me = new Character("og_me");
+		Character* djoyke = new Character("djoyke");
+		AMateria* tmp;
+
+		tmp = src->createMateria("ice");
+		og_me->equip(tmp);
+		tmp = src->createMateria("cure");
+		og_me->equip(tmp);
+
+		std::cout << std::endl << "Original character equipped with Ice and Cure:" << std::endl;
+		og_me->use(0, *djoyke);
+		og_me->use(1, *djoyke);
+
+		std::cout << std::endl << "Using copy constructor to make a deep copy:" << std::endl;
+		Character* copy_me = new Character(*og_me);
+		copy_me->use(0, *djoyke);
+		copy_me->use(1, *djoyke);
+
+		std::cout << std::endl << "Using assignment operator to copy character:" << std::endl;
+		Character another_me("another");
+		another_me = *og_me;
+		another_me.use(0, *djoyke);
+		another_me.use(1, *djoyke);
+
+		// Clean up
+		delete src;
+		delete djoyke;
+		delete og_me;
+		delete copy_me;
+	}
 	return 0;
 }
+

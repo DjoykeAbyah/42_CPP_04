@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:47:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/21 22:51:57 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/21 23:13:49 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Character::Character(const Character& copy) : _name(copy._name), _inventoryIndex
 		delete this->_inventory[i];
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = copy._inventory[i]->clone();
-	//need to check for no inventory?
 }
 
 Character& Character::operator=(const Character& copy){
