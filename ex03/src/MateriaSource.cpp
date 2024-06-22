@@ -54,9 +54,9 @@ MateriaSource::~MateriaSource(){
 /**
  * @todo make this function
  * learnMateria(AMateria*)
-Copies the Materia passed as a parameter and store it in memory so it can be cloned
-later. Like the Character, the MateriaSource can know at most 4 Materias. They
-are not necessarily unique.
+ * Copies the Materia passed as a parameter and store it in memory so it can be clone.
+ * later. Like the Character, the MateriaSource can know at most 4 Materias. They
+ * are not necessarily unique.
 */
 void MateriaSource::learnMateria(AMateria* m){
 	if (!m)

@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:08:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/21 23:15:38 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/22 17:00:29 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,10 @@ int main()
 		
 		// Clean dynamically allocated memory for AMateria objectsloor
     	for (int i = 0; i < Character::floorIndex; i++)
+		{
+			std::cout << Character::floor[i]->getType() << std::endl;
         	delete Character::floor[i];
+		}
 			
 		// Clean dynamically allocated memory
         delete djoyke;
@@ -116,40 +119,57 @@ int main()
 		// Using the copy constructor to make a deep copy of a character
 		// Use the overloaded assignment operator to copy character
 		// Using the copy constructor to make a deep copy of a character
+		Character* original = new Character();
 		IMateriaSource* src = new MateriaSource();
+		AMateria* tmp;
+		std::cout << std::endl;
+		
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
 		std::cout << std::endl;
+		
+		
+		for (int i = 0; i < 4; i++)
+		{
+			if (i % 2 == 0)
+			{
+				tmp = src->createMateria("ice");
+				original->equip(tmp);
+				tmp = nullptr;
+			}
+			else
+			{
+				tmp = src->createMateria("cure");
+				original->equip(tmp);
+				tmp = nullptr;
+			}
+		}
+		std::cout << std::endl;
 
-		Character* og_me = new Character("og_me");
-		Character* djoyke = new Character("djoyke");
-		AMateria* tmp;
+		Character *copy1 = new Character(*original); //copy constructor
+		Character copy2;
+		copy2 = *original; //copy asisgnment 
+		std::cout << std::endl;
 
 		tmp = src->createMateria("ice");
-		og_me->equip(tmp);
-		tmp = src->createMateria("cure");
-		og_me->equip(tmp);
+		copy1->equip(tmp);
+		copy2.unequip(3);
+		std::cout << std::endl;
 
-		std::cout << std::endl << "Original character equipped with Ice and Cure:" << std::endl;
-		og_me->use(0, *djoyke);
-		og_me->use(1, *djoyke);
+		original->printInventory();
+		copy2.printInventory();
+		copy1->printInventory();
 
-		std::cout << std::endl << "Using copy constructor to make a deep copy:" << std::endl;
-		Character* copy_me = new Character(*og_me);
-		copy_me->use(0, *djoyke);
-		copy_me->use(1, *djoyke);
-
-		std::cout << std::endl << "Using assignment operator to copy character:" << std::endl;
-		Character another_me("another");
-		another_me = *og_me;
-		another_me.use(0, *djoyke);
-		another_me.use(1, *djoyke);
-
-		// Clean up
+		for (int i = 0; i < Character::floorIndex; i++)
+		{
+			std::cout << Character::floor[i]->getType() << std::endl;
+        	delete Character::floor[i];
+		}
+		
+		delete copy1;
+		delete original;
 		delete src;
-		delete djoyke;
-		delete og_me;
-		delete copy_me;
+		std::cout << std::endl;
 	}
 	return 0;
 }

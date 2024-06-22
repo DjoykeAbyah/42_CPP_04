@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:38:47 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/21 21:42:20 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/22 15:58:54 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ class Character : public ICharacter
 		void equip(AMateria* m) override;
 		void unequip(int idx) override;
 		void use(int idx, ICharacter& target) override;
-		static void printFloor();
-		static void clearFloor();
+
+		void printInventory() const override;
 };
 
 #endif

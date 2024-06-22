@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:47:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/21 23:13:49 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/22 16:59:24 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ AMateria* Character::floor[200] = {NULL};
 int Character::floorIndex = 0;
 
 Character::Character() : _name("Default"), _inventoryIndex(0){
-	std::cout << BLUE << "Character" << RESET << "default constructor called" << RESET << std::endl;
+	std::cout << BLUE << "Character " << RESET << "default constructor called" << RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = nullptr;
 }
@@ -29,10 +29,12 @@ Character::Character(std::string const & name) : _name(name), _inventoryIndex(0)
 
 Character::Character(const Character& copy) : _name(copy._name), _inventoryIndex(copy._inventoryIndex) {
 	std::cout << BLUE << "Character " << RESET << "copy constructor called" << RESET << std::endl;
-	for (int i = 0; i < 4; i++)
-		delete this->_inventory[i];
-	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = copy._inventory[i]->clone();
+	for (int i = 0; i < 4; i++){
+		if (copy._inventory[i])
+			this->_inventory[i] = copy._inventory[i]->clone();
+		else
+			_inventory[i] = NULL;
+	}
 }
 
 Character& Character::operator=(const Character& copy){
@@ -93,4 +95,15 @@ void Character::use(int idx, ICharacter& target){
 		std::cout << "Nothing there to use" << std::endl;
 	else
 		_inventory[idx]->use(target);//AMateria attribute uses the AMateria function
+}
+
+void Character::printInventory() const {
+    std::cout << "Inventory of " << _name << ":" << std::endl;
+    for (int i = 0; i < 4; ++i) {
+        if (_inventory[i]) {
+            std::cout << "- Slot " << i << ": " << _inventory[i]->getType() << std::endl; // Assuming AMateria has getType method
+        } else {
+            std::cout << "- Slot " << i << ": empty" << std::endl;
+        }
+    }
 }
