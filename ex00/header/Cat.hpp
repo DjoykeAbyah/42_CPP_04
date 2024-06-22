@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/17 15:51:46 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/18 14:36:23 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/22 17:14:54 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Cat : public Animal
 		Cat& operator=(const Cat& copy);
 		~Cat();
 
-		void makeSound() const;//why not virtual here?
+		void makeSound() const;
 };
 
 #endif

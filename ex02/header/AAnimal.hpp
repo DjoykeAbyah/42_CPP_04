@@ -26,7 +26,7 @@ class AAnimal
 		AAnimal& operator=(const AAnimal& copy);
 		virtual ~AAnimal();
 		
-		const std::string& getType() const;//needs to be reference?
+		const std::string& getType() const;
 		const std::string& getName() const;
 		
 		void setName(const std::string& name);

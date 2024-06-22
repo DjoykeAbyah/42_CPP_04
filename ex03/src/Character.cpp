@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 18:47:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/22 16:59:24 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/22 17:17:15 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ void Character::equip(AMateria* m){
 		std::cout << "cupboard is already full" << std::endl;
 		return ;
 	}
-	this->_inventory[_inventoryIndex] = m;//assing the AMateria to the index of the inventory
+	this->_inventory[_inventoryIndex] = m;
 	_inventoryIndex++;
 }
 
 void Character::unequip(int idx){
     if ((idx >= 0 && idx < 4) && _inventory[idx])
     {
-        if (floorIndex < 200) // Assuming the size of floor is 200
+        if (floorIndex < 200)
         {
             floor[floorIndex] = _inventory[idx];//move item to the floor
             floorIndex++;
@@ -101,7 +101,7 @@ void Character::printInventory() const {
     std::cout << "Inventory of " << _name << ":" << std::endl;
     for (int i = 0; i < 4; ++i) {
         if (_inventory[i]) {
-            std::cout << "- Slot " << i << ": " << _inventory[i]->getType() << std::endl; // Assuming AMateria has getType method
+            std::cout << "- Slot " << i << ": " << _inventory[i]->getType() << std::endl;
         } else {
             std::cout << "- Slot " << i << ": empty" << std::endl;
         }
