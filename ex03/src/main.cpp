@@ -6,7 +6,7 @@
 /*   By: dreijans <dreijans@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/19 16:08:18 by dreijans      #+#    #+#                 */
-/*   Updated: 2024/06/22 17:18:05 by dreijans      ########   odam.nl         */
+/*   Updated: 2024/06/22 18:03:00 by dreijans      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,23 +147,17 @@ int main()
 		// Use the overloaded assignment operator to copy character
 		Character *copy1 = new Character(*original); //copy constructor
 		Character copy2;
-		copy2 = *original; //copy asisgnment overloader
-		std::cout << std::endl;
+		copy2 = *original; //copy assignment overloader
 
 		tmp = src->createMateria("ice");
 		copy1->equip(tmp);
+		delete tmp;
 		copy2.unequip(3);
 		std::cout << std::endl;
 
 		original->printInventory();
 		copy2.printInventory();
 		copy1->printInventory();
-
-		for (int i = 0; i < Character::floorIndex; i++)
-		{
-			std::cout << Character::floor[i]->getType() << std::endl;
-        	delete Character::floor[i];
-		}
 		
 		delete copy1;
 		delete original;
